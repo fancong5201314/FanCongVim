@@ -1,0 +1,38 @@
+#!/bin/bash  
+#用于python文件头生成  
+[ -z "$1" ] && exit 1  
+  
+date_path=$HOME'/.vim/template/dynamic'  
+datetime=`bash $date_path'/datetime.sh'`  
+filename=`echo ${1}`  
+year=`date +%Y`  
+  
+cat << EOF  
+<!--  
+/************************************************************************
+ * Copyright (C) $year All rights reserved.
+ * 文件名称：$filename
+ * 创 建 者：樊聪
+ * 邮    箱：fancong20@163.com
+ * 创建日期：$datetime
+ * 描    述：
+ * 
+ * 更新日志：
+ *  
+************************************************************************/
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title> new document </title>
+        <meta name="generator" content="" />
+        <meta name="author" content="" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+    </head>
+    
+    <body>
+
+    </body>
+</html>
+EOF

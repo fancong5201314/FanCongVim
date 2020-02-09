@@ -1,0 +1,24 @@
+#!/bin/bash
+# Generate template content for a c/c++ header file.
+# usage: $0 <filename>
+[ -z "$1" ] && exit 1
+
+head_def=`echo __${1}__ | tr "a-z.-" "A-Z__"`
+filename=`echo ${1}`
+date_path=$HOME'/.vim/template/dynamic'
+datetime=`bash $date_path'/datetime.sh'`
+year=`date +%Y`
+
+cat << EOF
+/***********************************************************
+ * Copyright (C) $year All rights reserved.
+ * 文件名称：$filename
+ * 创 建 者：樊聪
+ * 邮    箱：fancong20@163.com
+ * 创建日期：$datetime
+ * 描    述：
+ * 
+ * 更新日志
+ *  
+ ***********************************************************/
+EOF
