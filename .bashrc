@@ -83,6 +83,13 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cindex='ctags -I __THROW -I __THROWNL -I __nonnull -R --c-kinds=+p --fields=+iaS --extra=+q'
 
+alias svn_ci='svn ci --editor-cmd vim'
+alias valgrind_fc='valgrind --tool=memcheck --leak-check=yes --track-origins=yes'
+ 
+alias ffprobe_all='ffprobe -print_format csv -show_frames'
+alias ffprobe_audio='ffprobe -select_streams a -print_format csv -show_frames'
+alias ffprobe_video='ffprobe -select_streams v -print_format csv -show_frames'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
